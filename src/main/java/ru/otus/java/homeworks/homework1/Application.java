@@ -4,19 +4,17 @@ import java.util.Scanner;
 
 public class Application {
     public static void main(String[] args) {
-        greetings();
-        checkSign((int) (Math.random() * 10), (int) (Math.random() * 10), (int) (Math.random() * 10));
-        selectColor();
-        compareNumbers();
-        addOrSubtractAndPrint((int) (Math.random() * 10), (int) (Math.random() * 10),false);
-        additionalTask ();
+        int number = 10;
+        //  greetings();
+        //   checkSign((int) (Math.random() * number), (int) (Math.random() * number), (int) (Math.random() * number));
+        //   selectColor();
+        //   compareNumbers();
+        //  addOrSubtractAndPrint((int) (Math.random() * number), (int) (Math.random() * number),false);
+        additionalTask();
     }
 
     public static void greetings() {
-        System.out.println("Hello");
-        System.out.println("World");
-        System.out.println("from");
-        System.out.println("Java");
+        System.out.println("Hello\nWorld\nfrom\nJava");
     }
 
     public static void checkSign(int a, int b, int c) {
