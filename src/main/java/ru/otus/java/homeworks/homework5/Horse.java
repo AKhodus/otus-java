@@ -5,14 +5,9 @@ public class Horse extends Animal {
         super(name, runSpeed, swimSpeed);
     }
 
+    @Override
     public void swim(int distance) {
-        int time;
-        stamina = stamina - distance * 4;
-        if (stamina <= 0) {
-            time = -1;
-        } else {
-            time = distance / swimSpeed;
-        }
-        System.out.println(name + " затратил времени на плавание: " + time + " секунд");
+        super.swim(distance);
+        stamina = stamina - distance * 2;
     }
 }
