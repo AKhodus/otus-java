@@ -10,7 +10,7 @@ public class Car implements Mover {
     @Override
     public void move(int distance, TerrainType terrainType) {
         if (terrainType.equals(TerrainType.FOREST) || terrainType.equals(TerrainType.SWAMP)) {
-            System.out.println("Машина не пожет ехать по указанной местности!");
+            System.out.println("Машина не может ехать по указанной местности!");
             return;
         }
         amountPetrol--;
