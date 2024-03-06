@@ -2,6 +2,7 @@ package ru.otus.java.homeworks.homework9;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 public class Emloyee {
     public String name;
@@ -12,40 +13,45 @@ public class Emloyee {
         this.age = age;
     }
 
-    public static void employeeList(ArrayList<Emloyee> emloyeeArrayList) {
-        for (Emloyee elem : emloyeeArrayList) {
-            System.out.println(elem.name);
+    public static void employeeList(List<Emloyee> emloyeeList) {
+        List<String> list = new ArrayList<>();
+        for (Emloyee elem : emloyeeList) {
+            list.add(elem.name);
         }
+        System.out.println(list);
     }
 
-    public static void employeeListAge(ArrayList<Emloyee> emloyeeArrayList, int minAge) {
-        for (Emloyee elem : emloyeeArrayList) {
+    public static void employeeListAge(List<Emloyee> emloyeeList, int minAge) {
+        List<String> list = new ArrayList<>();
+        for (Emloyee elem : emloyeeList) {
             if (elem.age >= minAge) {
-                System.out.println(elem.name + " " + elem.age);
+                list.add(elem.name);
             }
+            System.out.print(list);
         }
     }
 
-    public static void employeeListAverageAge(ArrayList<Emloyee> emloyeeArrayList, int age) {
+    public static boolean employeeListAverageAge(List<Emloyee> emloyeeList, int age) {
         int sumAge = 0;
         int averageAge;
-        for (Emloyee elem : emloyeeArrayList) {
+        for (Emloyee elem : emloyeeList) {
             sumAge += elem.age;
         }
-        averageAge = sumAge / emloyeeArrayList.size();
-        System.out.println(averageAge >= age);
+        averageAge = sumAge / emloyeeList.size();
+        return averageAge >= age;
     }
 
-    public static void employeeListLink(ArrayList<Emloyee> emloyeeArrayList) {
-        ArrayList<Integer> arrayList = new ArrayList<>();
-        for (Emloyee elem : emloyeeArrayList) {
+    public static Emloyee employeeListLink(List<Emloyee> emloyeeList) {
+        List<Integer> arrayList = new ArrayList<>();
+        for (Emloyee elem : emloyeeList) {
             arrayList.add(elem.age);
         }
         int minAge = Collections.min(arrayList);
-        for (Emloyee elem : emloyeeArrayList) {
+        for (Emloyee elem : emloyeeList) {
             if (elem.age == minAge) {
-                System.out.println(elem.name);
+                return emloyeeList.get(emloyeeList.indexOf(elem));
             }
         }
+        return null;
     }
 }

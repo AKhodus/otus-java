@@ -2,32 +2,33 @@ package ru.otus.java.homeworks.homework9;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        displayArrayElements(4, 7);
-        ArrayList<Integer> arrayList = new ArrayList<>(Arrays.asList(1, 2, 3, 6, 7, 8, 9));
-        sumArrayElements(arrayList);
-        //rewriteArrayElements(1, arrayList);
-        //incrementArrayElements(5, arrayList);
-        ArrayList<Emloyee> emloyees = new ArrayList<>(Arrays.asList(new Emloyee("Ivan", 25), (new Emloyee("Petr", 30)), (new Emloyee("Sidor", 35)), (new Emloyee("Igor", 31))));
-        Emloyee.employeeList(emloyees);
+        //displayArrayElements(4, 7);
+        //List<Integer> list = new ArrayList<>(Arrays.asList(1, 2, 3, 6, 7, 8, 9));
+        //sumArrayElements(list);
+        //rewriteArrayElements(1, list);
+        //incrementArrayElements(5, list);
+        List<Emloyee> emloyees = new ArrayList<>(Arrays.asList(new Emloyee("Ivan", 25), (new Emloyee("Petr", 30)), (new Emloyee("Sidor", 35)), (new Emloyee("Igor", 31))));
+        //Emloyee.employeeList(emloyees);
         Emloyee.employeeListAge(emloyees, 31);
-        Emloyee.employeeListAverageAge(emloyees, 30);
-        Emloyee.employeeListLink(emloyees);
+        //System.out.println(Emloyee.employeeListAverageAge(emloyees,31));
+        //System.out.println(Emloyee.employeeListLink(emloyees));
     }
 
     public static void displayArrayElements(int min, int max) {
-        ArrayList<Integer> arrayList = new ArrayList<>();
+        List<Integer> list = new ArrayList<>();
         for (int i = min; i <= max; i++) {
-            arrayList.add(i);
+            list.add(i);
         }
-        System.out.println(arrayList);
+        System.out.println(list);
     }
 
-    public static void sumArrayElements(ArrayList<Integer> arrayList) {
+    public static void sumArrayElements(List<Integer> list) {
         int sum = 0;
-        for (Integer integer : arrayList) {
+        for (Integer integer : list) {
             if (integer > 5) {
                 sum += integer;
             }
@@ -35,21 +36,21 @@ public class Main {
         System.out.println(sum);
     }
 
-    public static void rewriteArrayElements(int a, ArrayList<Integer> arrayList) {
-        for (int i = 0; i < arrayList.size(); i++) {
-            if (arrayList.get(i) != null) {
-                arrayList.set(i, a);
+    public static void rewriteArrayElements(int a, List<Integer> list) {
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i) != null) {
+                list.set(i, a);
             }
         }
-        System.out.println(arrayList);
+        System.out.println(list);
     }
 
-    public static void incrementArrayElements(int a, ArrayList<Integer> arrayList) {
-        for (int i = 0; i < arrayList.size(); i++) {
-            int incr = arrayList.get(i);
+    public static void incrementArrayElements(int a, List<Integer> list) {
+        for (int i = 0; i < list.size(); i++) {
+            int incr = list.get(i);
             incr += a;
-            arrayList.set(i, incr);
+            list.set(i, incr);
         }
-        System.out.println(arrayList);
+        System.out.println(list);
     }
 }
