@@ -21,14 +21,14 @@ public class Emloyee {
         System.out.println(list);
     }
 
-    public static void employeeListAge(List<Emloyee> emloyeeList, int minAge) {
+    public static List<String> employeeListAge(List<Emloyee> emloyeeList, int minAge) {
         List<String> list = new ArrayList<>();
         for (Emloyee elem : emloyeeList) {
             if (elem.age >= minAge) {
                 list.add(elem.name);
             }
-            System.out.print(list);
         }
+        return list;
     }
 
     public static boolean employeeListAverageAge(List<Emloyee> emloyeeList, int age) {
@@ -41,6 +41,13 @@ public class Emloyee {
         return averageAge >= age;
     }
 
+    @Override
+    public String toString() {
+        return
+                "name:" + name +
+                        ", age:" + age;
+    }
+
     public static Emloyee employeeListLink(List<Emloyee> emloyeeList) {
         List<Integer> arrayList = new ArrayList<>();
         for (Emloyee elem : emloyeeList) {
@@ -49,7 +56,7 @@ public class Emloyee {
         int minAge = Collections.min(arrayList);
         for (Emloyee elem : emloyeeList) {
             if (elem.age == minAge) {
-                return emloyeeList.get(emloyeeList.indexOf(elem));
+                return elem;
             }
         }
         return null;
