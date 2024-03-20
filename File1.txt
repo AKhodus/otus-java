@@ -1,0 +1,1 @@
+The contents of file 1 are stored here.
