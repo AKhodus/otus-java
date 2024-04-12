@@ -27,7 +27,7 @@ class Box<T extends Fruit> {
         return Math.abs(this.getWeight() - anotherBox.getWeight()) < 0.0001;
     }
 
-    public void transferFruitsToAnotherBox(Box<T> anotherBox) {
+    public void transferFruitsToAnotherBox(Box<? super T> anotherBox) {
         if (this == anotherBox) {
             return;
         }
