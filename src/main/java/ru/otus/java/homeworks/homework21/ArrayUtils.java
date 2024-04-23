@@ -2,7 +2,6 @@ package ru.otus.java.homeworks.homework21;
 
 public class ArrayUtils {
 
-    // Метод для возвращения подмассива после последней единицы
     public static int[] getSubarrayAfterLastOne(int[] array) {
         int lastOneIndex = -1;
         for (int i = array.length - 1; i >= 0; i--) {
@@ -22,7 +21,6 @@ public class ArrayUtils {
         return subarray;
     }
 
-    // Метод для проверки, состоит ли массив только из чисел 1 и 2
     public static boolean containsOnlyOnesAndTwos(int[] array) {
         for (int num : array) {
             if (num != 1 && num != 2) {
