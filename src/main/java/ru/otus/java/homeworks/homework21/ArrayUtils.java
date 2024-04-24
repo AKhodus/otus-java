@@ -22,11 +22,21 @@ public class ArrayUtils {
     }
 
     public static boolean containsOnlyOnesAndTwos(int[] array) {
+        boolean containsOne = false;
+        boolean containsTwo = false;
+
         for (int num : array) {
             if (num != 1 && num != 2) {
                 return false;
             }
+            if (num == 1) {
+                containsOne = true;
+            }
+            if (num == 2) {
+                containsTwo = true;
+            }
         }
-        return true;
+
+        return containsOne && containsTwo;
     }
 }

@@ -5,15 +5,15 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class ArrayUtilsTest {
+class ArrayUtilsTest {
     @Test
-    public void testGetSubarrayAfterLastOne() {
+    void testGetSubarrayAfterLastOne() {
         assertArrayEquals(new int[]{2, 2}, ArrayUtils.getSubarrayAfterLastOne(new int[]{1, 2, 1, 2, 2}));
         assertThrows(RuntimeException.class, () -> ArrayUtils.getSubarrayAfterLastOne(new int[]{2, 2, 2, 2}));
     }
 
     @Test
-    public void testContainsOnlyOnesAndTwos() {
+    void testContainsOnlyOnesAndTwos() {
         assertTrue(ArrayUtils.containsOnlyOnesAndTwos(new int[]{1, 2}));
         assertFalse(ArrayUtils.containsOnlyOnesAndTwos(new int[]{1, 1}));
         assertFalse(ArrayUtils.containsOnlyOnesAndTwos(new int[]{1, 3}));
