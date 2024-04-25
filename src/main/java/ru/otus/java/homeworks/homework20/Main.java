@@ -24,6 +24,7 @@ public class Main {
                 }
             }
         };
+
         Runnable taskB = () -> {
             for (int i = 0; i < 5; i++) {
                 synchronized (monitor) {
@@ -40,6 +41,7 @@ public class Main {
                 }
             }
         };
+
         Runnable taskC = () -> {
             for (int i = 0; i < 5; i++) {
                 synchronized (monitor) {
@@ -56,6 +58,7 @@ public class Main {
                 }
             }
         };
+
         executor.submit(taskA);
         executor.submit(taskB);
         executor.submit(taskC);
