@@ -5,6 +5,8 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class MultiThreadedServer {
 
@@ -14,18 +16,19 @@ public class MultiThreadedServer {
         try (ServerSocket serverSocket = new ServerSocket(portNumber)) {
             System.out.println("Сервер запущен на порту " + portNumber);
 
+            ExecutorService executorService = Executors.newFixedThreadPool(10); // Количество потоков в пуле
+
             while (true) {
                 Socket socket = serverSocket.accept();
                 System.out.println("Подключен клиент: " + socket);
 
-                Thread thread = new Thread(() -> {
+                executorService.execute(() -> {
                     try {
                         handleClient(socket);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 });
-                thread.start();
             }
         } catch (IOException e) {
             e.printStackTrace();
