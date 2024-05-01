@@ -80,10 +80,11 @@ public class Box {
 
     public void getFromBox(String item) {
         if (state.equals("Открыто")) {
-        for (int i = 0; i < subjects.length; i++) {
-            if (subjects[i] == item) {
-                subjects[i] = null;
-                System.out.println("Из коробки взяли предмет: " + item);
+            for (int i = 0; i < subjects.length; i++) {
+                if (subjects[i] == item) {
+                    subjects[i] = null;
+                    System.out.println("Из коробки взяли предмет: " + item);
+                }
             }
         }
     }
