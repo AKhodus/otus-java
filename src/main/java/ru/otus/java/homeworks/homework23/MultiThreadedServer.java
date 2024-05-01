@@ -48,7 +48,7 @@ public class MultiThreadedServer {
                 String requestData = new String(buffer, 0, bytesRead);
                 System.out.println("Получены данные от клиента: " + requestData);
                 JsonObject jsonResponse = new JsonObject();
-                jsonResponse.addProperty("status", 200); // Указываем статус код ответа
+                jsonResponse.addProperty("status", 200);
                 jsonResponse.addProperty("message", "Принят запрос: " + requestData);
                 String responseData = jsonResponse.toString();
                 outputStream.write(responseData.getBytes());
